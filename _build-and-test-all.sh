@@ -14,14 +14,14 @@ ${dockerall}Down
 ${dockercdc}Build
 ${dockercdc}Up
 
-./wait-for-services.sh $DOCKER_HOST_IP "8099"
+sleep 20
 
 ./gradlew -x :end-to-end-tests:test build
 
 ${dockerall}Build
 ${dockerall}Up
 
-./wait-for-services.sh $DOCKER_HOST_IP "8081 8082"
+sleep 20
 
 ./gradlew :end-to-end-tests:cleanTest :end-to-end-tests:test
 
